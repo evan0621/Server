@@ -34,12 +34,19 @@ public class LoginServlet extends HttpServlet {
         String userName=request.getParameter("userName");
         String password=request.getParameter("password");
         Account account=Account.getAccount(userName);
+        int times=Integer.valueOf(request.getParameter("times"));
         String url="";
         if(account!=null && account.getPassword().equals(password)){
             url="/WEB-INF/loginSuccess.jsp";
             request.setAttribute("account", account);
         }else{
-            url="/WEB-INF/loginFail.jsp";
+            times++;
+            if(times>2){
+                url="/WEB-INF/loginCancel.jsp";
+            }else{
+                request.setAttribute("times", ""+times);
+                url="/WEB-INF/loginFail.jsp";
+            }
         }
         if(url!=null){
             request.getRequestDispatcher(url).forward(request, response);
