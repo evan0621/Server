@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lendle
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/"})
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
 
     /**
@@ -35,14 +35,14 @@ public class LoginServlet extends HttpServlet {
         String password=request.getParameter("password");
         Account account=Account.getAccount(userName);
         String url="";
-        if(account!=null){
-            url="/WEB-INF/loginSuccess";
+        if(account!=null && account.getPassword().equals(password)){
+            url="/WEB-INF/loginSuccess.jsp";
             request.setAttribute("account", account);
         }else{
-            url="/WEB-INF/loginFail";
+            url="/WEB-INF/loginFail.jsp";
         }
         if(url!=null){
-            request.getRequestDispatcher("url").forward(request, response);
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 

@@ -13,9 +13,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-            Account account=(Account)request.getAttribute("account");
-        %>
-        Hi!<%=account.getRealName()%>
+        Sorry, fail too many times!
     </body>
 </html>
