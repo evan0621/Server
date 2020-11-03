@@ -4,6 +4,7 @@
     Author     : lendle
 --%>
 
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="/WEB-INF/form.jsp"/>
+        Welcome to this demonstration site, it is: <%=new Date()%><br/>
+        <a href="login.jsp">Login</a>
     </body>
 </html>

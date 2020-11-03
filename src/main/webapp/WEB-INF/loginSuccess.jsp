@@ -16,6 +16,7 @@
         <%
             Account account=(Account)request.getAttribute("account");
         %>
-        Hi!<%=account.getRealName()%>
+        Hi!<%=account.getRealName()%><br/>
+        <a href="logout.jsp">Logout</a>
     </body>
 </html>

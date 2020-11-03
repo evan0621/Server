@@ -1,10 +1,9 @@
 <%-- 
-    Document   : loginSuccess
-    Created on : Nov 2, 2020, 6:47:41 AM
+    Document   : index
+    Created on : Nov 2, 2020, 9:17:45 PM
     Author     : lendle
 --%>
 
-<%@page import="lendle.courses.soa.networkmidterm1091.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Try again!<br/>
         <%@include file="/WEB-INF/form.jsp" %>
-        <p style="color: red">Login failed for <%=times%> times</p>
     </body>
 </html>
